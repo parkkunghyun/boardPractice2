@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>login form</title>
+  <link rel="stylesheet" href="board.css">
+</head>
+<body>
+<h2>SIGN IN FORM</h2>
+<div class="container">
+  <form action="/board/signIn" method="post">
+    name: <input type="text" name="name" placeholder="이름을 입력하시오"><br>
+    email: <input type="text" name="email" placeholder="이메일을 입력하시오"><br>
+    password: <input type="password" name="password" placeholder="비밀번호를 입력하세요"><br>
+    <input type="submit" value="로그인">
+  </form>
+</div>
+</body>
+</html>

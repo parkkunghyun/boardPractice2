@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="board.css">
+</head>
+<body>
+<h1>게시판 - 목록보기</h1>
+
+<div class="login-info">
+  <div class="container">
+    <span th:if="${logInInfo ==null}"><a href="/board/logIn">로그인</a></span>
+    <span th:if="${logInInfo ==null}" ><a href="/board/signIn">회원가입</a></span>
+
+    <span th:if="${logInInfo != null}" class="login-info_logout">
+      <a href="/board/logout">로그 아웃</a>
+    </span>
+    <span th:if="${logInInfo != null}" class="userName">
+      <span th:text="${logInInfo.name}">박</span>
+    </span>
+
+  </div>
+</div>
+
+<div id="board-list">
+  <div class="container">
+    <table class="board-table">
+      <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>조회수</th>
+        <th>작성자</th>
+        <th>등록일</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>2</td>
+        <td>박경현222 글 2</td>
+        <td>0</td>
+        <td>박경현</td>
+        <td>2023-04-13</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td ><a href="/board/detail?boardId=1">박경현 글 1</a></td>
+        <td>0</td>
+        <td>박경현</td>
+        <td>2023-04-13</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="buttons">
+  <a href="/writeForm" th:if="${logInInfo != null}" > 글쓰기 </a>
+  <span th:if="${logInInfo == null}">글쓰기 - 로그인 하고 가능!</span>
+</div>
+</body>
+</html>
